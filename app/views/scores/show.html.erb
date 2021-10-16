@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>プレー日:</strong>
+  <%= @score.play_date %>
+</p>
+<p>
+  <strong>ゴルフコース:</strong>
+  <%= @score.golf_couse %>
+</p>
+<p>
+  <strong>前半スコア:</strong>
+  <%= @score.out_score %>
+</p>
+<p>
+  <strong>前半パット数:</strong>
+  <%= @score.out_pats %>
+</p>
+<p>
+  <strong>後半スコア:</strong>
+  <%= @score.in_score %>
+</p>
+<p>
+  <strong>後半パット数:</strong>
+  <%= @score.in_pats %>
+</p>
+
+<%= link_to '編集', edit_score_path(@score) %> |
+<%= link_to '戻る', scores_path %>

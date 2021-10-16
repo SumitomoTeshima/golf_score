@@ -1,0 +1,47 @@
+<%= form_with(model: score) do |form| %>
+  <% if score.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(score.errors.count, "error") %> prohibited this score from being saved:</h2>
+
+      <ul>
+        <% score.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :プレー日 %>
+    <%= form.date_select :play_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ゴルフコース %>
+    <%= form.text_field :golf_couse %>
+  </div>
+
+  <div class="field">
+    <%= form.label :前半スコア %>
+    <%= form.text_field :out_score %>
+  </div>
+
+  <div class="field">
+    <%= form.label :前半パット数 %>
+    <%= form.text_field :out_pats %>
+  </div>
+
+  <div class="field">
+    <%= form.label :後半スコア %>
+    <%= form.text_field :in_score %>
+  </div>
+
+  <div class="field">
+    <%= form.label :後半パット数 %>
+    <%= form.text_field :in_pats %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

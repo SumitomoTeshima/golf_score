@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  play_date: 2021-06-18
+  golf_couse: MyString
+  out_score: 9.99
+  out_pats: 9.99
+  in_score: 9.99
+  in_pats: 9.99
+
+two:
+  play_date: 2021-06-18
+  golf_couse: MyString
+  out_score: 9.99
+  out_pats: 9.99
+  in_score: 9.99
+  in_pats: 9.99

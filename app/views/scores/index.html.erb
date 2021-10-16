@@ -1,0 +1,55 @@
+<h1>ゴルフスコアを管理します。</h1>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.15.5/jquery.jqgrid.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/themes/redmond/jquery-ui.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.15.5/css/ui.jqgrid.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.15.5/plugins/css/ui.multiselect.min.css"/>
+
+<body>
+
+  <table id="score_list"></table>
+  <div id="pager"></div>
+
+  <%= link_to '新しいスコアを追加', new_score_path %>
+
+</body>
+
+
+<script>
+  $(function(){
+    // ユーザー設定 - ゴルフスコア
+    $('#score_list').jqGrid({
+      url:'/scores/',
+      datatype:'json',
+      colNames:[" ","プレー日","コース名","アウト","パット","イン","パット"],
+      colModel:[
+        {bame:'myac',width:50,fixed:true,sortable:false,resize:false,
+          formatter:'actions',formatoptions:{keys:true}},
+        {name:'play_date',width:100,align:'center',sortable:true,editable:true},
+        {name:'golf_couse',width:200,align:'center',sortable:true,editable:true},
+        {name:'out_score',width:50,align:'right',sortable:true,editable:true},
+        {name:'out_pats',width:50,align:'right',sortable:true,editable:true},
+        {name:'in_score',width:50,align:'right',sortable:true,editable:true},
+        {name:'in_pats',width:50,align:'right',sortable:true,editable:true}
+      ],
+      width:'auto',
+      height:'auto',
+      sortname:'play_data',
+      sortorder:"ASC",
+      multiselect: false,
+      caption:"ゴルフスコア",
+      pager:'#pager',
+      editurl:"/scores/edit"
+    });
+    $("#score_list").jqGrid("navGrid","#pager",
+      {view:true,edit:false,add:true,del:false}, //options
+      {}, // edit options
+      {height:290,jqModal:false, closeOnEscape:true,bottominfo:"Fields marked with (*) are required", closeAfterAdd: true}, // add options
+      {}, // del options
+      {closeOnEscape:true}, // search options
+      {height:250,jqModal:false,closeOnEscape:true} // view options
+    );
+  });
+
+</script>
