@@ -39,7 +39,15 @@ class ScoresController < ApplicationController
       end
     end
   end
-
+  #POST /post_data
+  def post_data
+    if parames("oper") == "add"
+      score = score.new
+    end
+    score.play_date = params("play_data")
+  
+  end
+  
   # PATCH/PUT /scores/1 or /scores/1.json
   def update
     respond_to do |format|

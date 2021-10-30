@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_18_073701) do
+ActiveRecord::Schema.define(version: 2021_10_24_093627) do
+
+  create_table "courses", force: :cascade do |t|
+    t.string "GolfCourse"
+    t.text "GolfAddress"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "scores", force: :cascade do |t|
     t.date "play_date"

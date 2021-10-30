@@ -10,8 +10,8 @@
 
   <table id="score_list"></table>
   <div id="pager"></div>
-
-  <%= link_to '新しいスコアを追加', new_score_path %>
+  <br>
+  <%= link_to 'ゴルフコースを登録', courses_path %>
 
 </body>
 
@@ -40,16 +40,19 @@
       multiselect: false,
       caption:"ゴルフスコア",
       pager:'#pager',
-      editurl:"/scores/edit"
+      editurl:"scores/post_data"
     });
     $("#score_list").jqGrid("navGrid","#pager",
-      {view:true,edit:false,add:true,del:false}, //options
+      {view:true,edit:false,add:true,del:false}, // options
       {}, // edit options
       {height:290,jqModal:false, closeOnEscape:true,bottominfo:"Fields marked with (*) are required", closeAfterAdd: true}, // add options
       {}, // del options
       {closeOnEscape:true}, // search options
       {height:250,jqModal:false,closeOnEscape:true} // view options
     );
+  });
+  $(function() {
+    $("input[type='button']").button();
   });
 
 </script>
