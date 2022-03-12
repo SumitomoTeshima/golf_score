@@ -11,7 +11,7 @@
   <table id="score_list"></table>
   <div id="pager"></div>
   <br>
-  <%= link_to 'ゴルフコースを登録', courses_path %>
+  <%= button_to 'ゴルフコースを登録', courses_path, method: :get %>
 
 </body>
 
@@ -27,7 +27,7 @@
         {bame:'myac',width:50,fixed:true,sortable:false,resize:false,
           formatter:'actions',formatoptions:{keys:true}},
         {name:'play_date',width:100,align:'center',sortable:true,editable:true},
-        {name:'golf_couse',width:200,align:'center',sortable:true,editable:true},
+        {name:'golf_couse',width:300,align:'left',sortable:true,editable:true},
         {name:'out_score',width:50,align:'right',sortable:true,editable:true},
         {name:'out_pats',width:50,align:'right',sortable:true,editable:true},
         {name:'in_score',width:50,align:'right',sortable:true,editable:true},

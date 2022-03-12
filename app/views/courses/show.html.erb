@@ -1,14 +1,34 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Golfcourse:</strong>
-  <%= @course.GolfCourse %>
-</p>
+<h1>ゴルフ場 詳細</h1>
 
-<p>
-  <strong>Golfaddress:</strong>
-  <%= @course.GolfAddress %>
-</p>
+<table class = "course">
+  <tbody>
+    <tr>
+      <th class = "arrow_box" > ゴルフ場：</th>
+      <td> <%= @course.GolfCourse %> </td>
+    </tr>
+    <tr>
+      <th class = "arrow_box" > 住所　　：</th>
+      <td> <%= @course.GolfAddress %> </td>
+    </tr>
+  </tbody>
+</table>
 
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+<br>
+
+<br>
+
+<%= button_to '編集', edit_course_path(@course), method: :get %>
+<%= button_to '戻る', courses_path(), method: :get %>
+
+<!-- footer -->
+  <footer>
+　　<ul class="footer-menu">
+     <li>home ｜</li>
+     <li>about ｜</li>
+     <li>service ｜</li>
+     <li>Contact Us</li>
+    </ul>
+    <p>© All rights reserved by SumitomoTeshima</p>
+  </footer>

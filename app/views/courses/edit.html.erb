@@ -1,6 +1,6 @@
-<h1>Editing Course</h1>
+<h1>ゴルフ場 編集</h1>
 
 <%= render 'form', course: @course %>
 
-<%= link_to 'Show', @course %> |
-<%= link_to 'Back', courses_path %>
+<%= button_to '詳細', @course, method: :get%>
+<%= button_to '戻る', courses_path() %>

@@ -11,13 +11,16 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :GolfCourse %>
-    <%= form.text_field :GolfCourse %>
-  </div>
+  <table class="course">
+    <tr>
+      <%= form.label "ゴルフ場" %>
+      <%= form.text_field :GolfCourse %>
+    </tr>
+  </table>
 
+  <br>
   <div class="field">
-    <%= form.label :GolfAddress %>
+    <%= form.label "住所" %>
     <%= form.text_area :GolfAddress %>
   </div>
 
